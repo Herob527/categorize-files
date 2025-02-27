@@ -1,0 +1,43 @@
+version: '3'
+services:
+  backend:
+    container_name: categorize-backend
+    volumes:
+      - backend:/app
+    build:
+      context: ./fastapi-categorise-backend
+    ports:
+      - "80:80"
+    develop:
+      watch:
+        - action: sync
+          path: ./fastapi-categorise-backend
+          target: /app
+        - action: rebuild
+          path: pyproject.toml
+  frontend:
+    container_name: categorize-frontend
+    restart: always
+    build:
+      context: ./vue-categorise-frontend
+    volumes:
+      - frontend:/app
+    ports:
+      - "5173:5173"
+    environment:
+      - NODE_ENV=development
+      - DOCKER=true
+    develop:
+      watch:
+        - action: sync
+          path: ./vue-categorise-frontend
+          target: /app
+          ignore:
+            - node_modules/
+        - action: rebuild
+          path: package.json
+volumes:
+  frontend:
+    driver: local
+  backend:
+    driver: local
