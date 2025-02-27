@@ -1,0 +1,6 @@
+[submodule "vue-categorise-frontend"]
+	path = vue-categorise-frontend
+	url = git@github.com:Herob527/vue-categorise-frontend.git
+[submodule "fastapi-categorise-backend"]
+	path = fastapi-categorise-backend
+	url = git@github.com:Herob527/fastapi-categorise-backend.git
