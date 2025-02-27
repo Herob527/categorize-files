@@ -16,3 +16,7 @@
 3. Open [http://localhost:5173](http://localhost:5173) for web-app
 
 4. Open [http://localhost:80](http://localhost:80) for API docs
+
+## Instructions for production
+
+Not planned yet
