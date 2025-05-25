@@ -26,8 +26,8 @@ services:
 
   backend:
     container_name: categorize-backend
-    volumes:
-      - backend:/app
+    # volumes:
+    #   - backend:/app
     build:
       context: ./fastapi-categorise-backend
     ports:
