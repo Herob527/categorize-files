@@ -9,15 +9,20 @@
 
 0. Run `git clone 'https://github.com/Herob527/categorize_files  --recursive'`
 
-1. Run `docker compose build`
+1. Create .env file with environment variables in `.env file` section
 
-2. Run `docker compose up --watch`
+2. Run `docker compose up --build --watch`
 
-3. Open [http://localhost:3050](http://localhost:3050) for web-app
+## Links
 
-4. Open [http://localhost:3051](http://localhost:3051) for API docs
+- [Web App](http://localhost:3050)
 
-5. Open [http://localhost:3052](http://localhost:3052) for adminer and select `PostgreSQL` as System
+- [API Docs](http://localhost:3051)
+
+- [Adminer](http://localhost:3052)
+- - Mind to select PostreSQL system
+
+- [Minio](http://localhost:3053)
 
 ## .env file
 
@@ -26,13 +31,16 @@ For environment to set up properly, you need to create a `.env` file containing:
 - DB_USER
 - DB_PASSWORD
 - DB_NAME
-
-Example of `.env` file:
+- MINIO_ROOT_USER
+- MINIO_ROOT_PASSWORD
+  Example of `.env` file:
 
 ```bash
 DB_USER=myuser
 DB_PASSWORD=mypassword
 DB_NAME=mydb
+MINIO_ROOT_USER=minio
+MINIO_ROOT_PASSWORD=minio_123$
 ```
 
 ## Instructions for production
