@@ -20,7 +20,8 @@
 - [API Docs](http://localhost:3051)
 
 - [Adminer](http://localhost:3052)
-- - Mind to select PostreSQL system
+
+  - Mind to select PostreSQL system
 
 - [Minio](http://localhost:3053)
 
