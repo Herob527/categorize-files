@@ -46,8 +46,6 @@ services:
     restart: always
     build:
       context: ./vue-categorise-frontend
-    volumes:
-      - frontend:/app
     ports:
       - "3050:5173"
     environment:
