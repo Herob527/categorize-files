@@ -13,7 +13,7 @@
 
 2. Run `docker compose up --build --watch`
 
-## Links
+## Links in docker compose
 
 - [Web App](http://localhost:3050)
 
