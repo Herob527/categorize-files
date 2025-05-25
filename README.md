@@ -23,7 +23,7 @@
 
   - Mind to select PostreSQL system
 
-- [Minio](http://localhost:3053)
+- [Minio](http://localhost:9001)
 
 ## .env file
 
