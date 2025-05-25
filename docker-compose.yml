@@ -31,7 +31,7 @@ services:
     build:
       context: ./fastapi-categorise-backend
     ports:
-      - "80:80"
+      - "3051:80"
     develop:
       watch:
         - action: sync
