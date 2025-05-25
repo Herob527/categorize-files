@@ -67,3 +67,6 @@ volumes:
     driver: local
   pgdata:
     driver: local
+networks:
+  postgres:
+  app:
