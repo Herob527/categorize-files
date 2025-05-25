@@ -1,4 +1,29 @@
 services:
+  db:
+    image: postgres:17.5-bookworm
+    restart: always
+    environment:
+      - POSTGRES_USER=myuser
+      - POSTGRES_PASSWORD=mypassword
+      - POSTGRES_DB=mydb
+      - PGDATA=/var/lib/postgresql/data/pgdata
+    volumes:
+      - pgdata:/var/lib/postgresql/data/pgdata
+    ports:
+      - "5432:5432"
+    command:
+      - postgres
+    networks:
+      - postgres
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 3052:8080
+    networks:
+      - postgres
+
   backend:
     container_name: categorize-backend
     volumes:
