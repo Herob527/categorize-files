@@ -39,6 +39,8 @@ services:
           target: /app
         - action: rebuild
           path: pyproject.toml
+        - action: rebuild
+          path: poetry.lock
   frontend:
     container_name: categorize-frontend
     restart: always
