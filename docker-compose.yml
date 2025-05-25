@@ -41,6 +41,14 @@ services:
           path: pyproject.toml
         - action: rebuild
           path: poetry.lock
+    networks:
+      - app
+      - postgres
+    environment:
+      - SQLALCHEMY_DATABASE_URL=postgresql+psycopg://myuser:mypassword@db:5432/mydb
+    depends_on:
+      - db
+
   frontend:
     container_name: categorize-frontend
     restart: always
