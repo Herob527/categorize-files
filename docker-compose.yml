@@ -67,3 +67,5 @@ volumes:
     driver: local
   backend:
     driver: local
+  pgdata:
+    driver: local
