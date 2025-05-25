@@ -72,11 +72,13 @@ services:
       - app
     depends_on:
       - backend
+
 volumes:
   backend:
     driver: local
   pgdata:
     driver: local
+
 networks:
   postgres:
   app:
