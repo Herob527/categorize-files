@@ -34,6 +34,7 @@ For environment to set up properly, you need to create a `.env` file containing:
 - DB_NAME
 - MINIO_ROOT_USER
 - MINIO_ROOT_PASSWORD
+
   Example of `.env` file:
 
 ```bash
