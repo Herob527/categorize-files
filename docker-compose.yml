@@ -3,9 +3,9 @@ services:
     image: postgres:17.5-bookworm
     restart: always
     environment:
-      - POSTGRES_USER=myuser
-      - POSTGRES_PASSWORD=mypassword
-      - POSTGRES_DB=mydb
+      - POSTGRES_USER=${DB_USER}
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
+      - POSTGRES_DB=${DB_NAME}
       - PGDATA=/var/lib/postgresql/data/pgdata
     volumes:
       - pgdata:/var/lib/postgresql/data/pgdata
@@ -15,6 +15,8 @@ services:
       - postgres
     networks:
       - postgres
+    env_file:
+      - .env
 
   adminer:
     image: adminer
@@ -45,9 +47,11 @@ services:
       - app
       - postgres
     environment:
-      - SQLALCHEMY_DATABASE_URL=postgresql+psycopg://myuser:mypassword@db:5432/mydb
+      - SQLALCHEMY_DATABASE_URL=postgresql+psycopg://${DB_USER}:${DB_PASSWORD}@db:5432/${DB_NAME}
     depends_on:
       - db
+    env_file:
+      - .env
 
   frontend:
     container_name: categorize-frontend
