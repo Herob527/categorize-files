@@ -1,9 +1,16 @@
 # Categorize files
 
-## Prerequisites
+## Prerequisites to launch
 
 - Docker
 - Docker compose
+
+## Prerequisites to develop
+
+Above +
+
+- bun (for vue)
+- python with Poetry (for fastapi)
 
 ## Instructions for development
 
