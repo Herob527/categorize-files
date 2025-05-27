@@ -22,15 +22,15 @@ Above +
 
 ## Local links in docker compose
 
-- [Web App](http://localhost:3050)
+- Web App — <http://localhost:3050>
 
-- [API Docs](http://localhost:3051)
+- API Docs — <http://localhost:3051>
 
-- [Adminer](http://localhost:3052)
+- Adminer — <http://localhost:3052>
 
   - Mind to select PostreSQL system
 
-- [Minio](http://localhost:9001)
+- Minio — <http://localhost:9001>
 
 ## .env file
 
