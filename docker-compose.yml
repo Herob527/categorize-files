@@ -102,7 +102,6 @@ services:
           path: package.json
     networks:
       - app
-      - storage
     depends_on:
       - backend
       - minio
