@@ -27,5 +27,5 @@ services:
       - postgres
 
 volumes:
-  minio_data:
+  pgdata:
     driver: local
