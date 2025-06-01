@@ -8,9 +8,9 @@ services:
       - "9090:9090"
     volumes:
       - ../prometheus.yml:/etc/prometheus/prometheus.yml
+    restart: always
     networks:
       - app
-    restart: always
     depends_on:
       - cadvisor
     profiles: [develop]
@@ -51,8 +51,6 @@ services:
       - /var/run:/var/run:rw
       - /sys:/sys:ro
       - /var/lib/docker/:/var/lib/docker:ro
-    depends_on:
-      - backend
     profiles: [develop]
 
 volumes:
