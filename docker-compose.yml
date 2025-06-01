@@ -73,12 +73,5 @@ services:
 
 networks:
   postgres:
-    name: postgres
-    driver: bridge
   app:
-    name: app
-    driver: bridge
   storage:
-    name: storage
-    driver: bridge
-
