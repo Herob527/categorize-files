@@ -49,7 +49,7 @@ services:
 
     build:
       context: ./vue-categorise-frontend
-      target: prod 
+      target: dev 
     ports:
       - "3050:4173"
     environment:
