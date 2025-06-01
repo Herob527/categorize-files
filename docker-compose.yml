@@ -51,7 +51,7 @@ services:
       context: ./vue-categorise-frontend
       target: dev 
     ports:
-      - "3050:4173"
+      - "3050:5173"
     environment:
       - NODE_ENV=development
       - DOCKER=true
