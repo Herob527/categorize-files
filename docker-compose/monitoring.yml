@@ -1,0 +1,59 @@
+
+# Add to your main docker-compose.yml
+services:
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: categorize-prometheus
+    ports:
+      - "9090:9090"
+    volumes:
+      - ../prometheus.yml:/etc/prometheus/prometheus.yml
+    networks:
+      - app
+    restart: always
+    depends_on:
+      - cadvisor
+    profiles: [develop]
+    develop:
+      watch:
+        - action: restart
+          path: ../prometheus.yml
+          target: /etc/prometheus/prometheus.yml
+
+  grafana:
+    image: grafana/grafana:latest
+    container_name: categorize-grafana
+    ports:
+      - "3000:3000"
+    volumes:
+      - grafana-data:/var/lib/grafana
+    networks:
+      - app
+    restart: always
+    depends_on:
+      - prometheus
+    profiles: [develop]
+    env_file:
+      - ../.env
+
+  cadvisor:
+    image: gcr.io/cadvisor/cadvisor:v0.52.0
+    container_name: cadvisor
+    networks:
+      - app
+    command:
+      # Necessary for fedora encrypted disks
+      - --disable_metrics=disk,referenced_memory
+    ports:
+      - 8090:8080
+    volumes:
+      - /:/rootfs:ro
+      - /var/run:/var/run:rw
+      - /sys:/sys:ro
+      - /var/lib/docker/:/var/lib/docker:ro
+    depends_on:
+      - backend
+    profiles: [develop]
+
+volumes:
+  grafana-data:
