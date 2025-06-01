@@ -1,0 +1,31 @@
+services:
+  db:
+    image: postgres:17.5-bookworm
+    restart: always
+    environment:
+      - POSTGRES_USER=${DB_USER}
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
+      - POSTGRES_DB=${DB_NAME}
+      - PGDATA=/var/lib/postgresql/data/pgdata
+    volumes:
+      - pgdata:/var/lib/postgresql/data/pgdata
+    ports:
+      - "3053:5432"
+    command:
+      - postgres
+    networks:
+      - postgres
+    env_file:
+      - ../.env
+
+  adminer:
+    image: adminer:5.3.0
+    restart: always
+    ports:
+      - 3052:8080
+    networks:
+      - postgres
+
+volumes:
+  minio_data:
+    driver: local
