@@ -10,7 +10,7 @@ services:
     build:
       context: ./fastapi-categorise-backend
     ports:
-      - "3051:80"
+      - 3051:80
     develop:
       watch:
         - action: sync
@@ -29,7 +29,6 @@ services:
         limits:
           cpus: 2
           memory: 2G
-        
 
     environment:
       - SQLALCHEMY_DATABASE_URL=postgresql+psycopg://${DB_USER}:${DB_PASSWORD}@db/${DB_NAME}
@@ -42,16 +41,14 @@ services:
       - db
     env_file:
       - .env
-
   frontend:
     container_name: categorize-frontend
     restart: always
-
     build:
       context: ./vue-categorise-frontend
-      target: dev 
+      target: dev
     ports:
-      - "3050:5173"
+      - 3050:5173
     environment:
       - NODE_ENV=development
       - DOCKER=true
@@ -69,7 +66,6 @@ services:
     depends_on:
       - backend
       - minio
-
 
 networks:
   postgres:
