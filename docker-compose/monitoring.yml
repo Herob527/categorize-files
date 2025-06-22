@@ -13,6 +13,7 @@ services:
       - app
     depends_on:
       - cadvisor
+      - nginx_exporter
     profiles: [develop]
     develop:
       watch:
@@ -53,5 +54,16 @@ services:
       - /var/lib/docker/:/var/lib/docker:ro
     profiles: [develop]
 
+  nginx_exporter:
+    image: nginx/nginx-prometheus-exporter:latest
+    container_name: nginx-exporter
+    profiles: [develop]
+    command:
+      - '--nginx.scrape-uri=http://nginx:8080/stub_status'
+    ports:
+      - "9113:9113"  # Optional: expose for manual testing
+    networks:
+      - app
+      - nginx
 volumes:
   grafana-data:
