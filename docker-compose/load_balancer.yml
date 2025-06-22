@@ -1,11 +1,10 @@
-# yaml-language-server: $schema=https://raw.githubusercontent.com/compose-spec/compose-spec/master/schema/compose-spec.json
-
 services:
   nginx:
     build:
       context: ../
     ports:
-      - "3049:1050"
+      - "3049:3049"
+      - "8080:8080"
     networks:
       - nginx
     develop:
@@ -13,4 +12,7 @@ services:
         - action: sync+restart
           path: ../nginx.conf
           target: /etc/nginx/nginx.conf
+    depends_on:
+      - backend
+      - frontend
 
