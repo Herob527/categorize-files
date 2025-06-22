@@ -10,8 +10,6 @@ services:
     container_name: categorize-backend
     build:
       context: ./fastapi-categorise-backend
-    ports:
-      - 3051:80
     develop:
       watch:
         - action: sync
@@ -48,8 +46,6 @@ services:
     build:
       context: ./vue-categorise-frontend
       target: dev
-    ports:
-      - 3050:5173
     environment:
       - NODE_ENV=development
       - DOCKER=true
