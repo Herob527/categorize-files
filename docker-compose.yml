@@ -2,6 +2,7 @@ include:
   - ./docker-compose/database.yml
   - ./docker-compose/storage.yml
   - ./docker-compose/monitoring.yml
+  - ./docker-compose/load_balancer.yml
 
 services:
   backend:
@@ -63,11 +64,17 @@ services:
           path: package.json
     networks:
       - app
+      - nginx
     depends_on:
       - backend
       - minio
+      - nginx
 
 networks:
   postgres:
+    internal: true
   app:
+    internal: true
   storage:
+    internal: true
+  nginx:
