@@ -65,13 +65,11 @@ services:
     depends_on:
       - backend
       - minio
-      - nginx
 
 networks:
   postgres:
     internal: true
-  app:
-    internal: true
   storage:
     internal: true
+  app:
   nginx:
