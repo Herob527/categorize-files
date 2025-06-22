@@ -23,6 +23,7 @@ services:
       - app
       - postgres
       - storage
+      - nginx
     deploy:
       resources:
         limits:
