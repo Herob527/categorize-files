@@ -29,7 +29,7 @@ Above +
 
 - Web App — <http://localhost:3050>
 
-- API Docs — <http://localhost:3051>
+- API Docs — <http://localhost:305/api>
 
 - Adminer — <http://localhost:3052>
 
