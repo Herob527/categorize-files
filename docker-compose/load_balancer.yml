@@ -2,9 +2,10 @@ services:
   nginx:
     build:
       context: ../
+      target: base
     ports:
-      - "3050:3050"
-      - "8080:8080"
+      - 3050:3050
+      - 8080:8080
     networks:
       - nginx
     develop:
@@ -15,4 +16,27 @@ services:
     depends_on:
       - backend
       - frontend
+
+  nginx-minio:
+    build:
+      context: ../
+      target: base-minio
+    deploy:
+      restart_policy:
+        condition: on-failure
+        delay: 10s
+        max_attempts: 5
+        window: 60s
+    ports:
+      - 9010:80
+    networks:
+      - nginx
+      - storage
+    develop:
+      watch:
+        - action: sync+restart
+          path: ../nginx-minio.conf
+          target: /etc/nginx/nginx.conf
+    depends_on:
+      - minio
 

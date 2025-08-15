@@ -11,3 +11,7 @@ EXPOSE 3050
 FROM nginx:1.27.5-bookworm AS base
 
 COPY nginx.conf /etc/nginx/nginx.conf
+
+FROM nginx:1.27.5-bookworm AS base-minio
+
+COPY nginx-minio.conf /etc/nginx/nginx.conf
