@@ -1,0 +1,7 @@
+[tasks.purge]
+description = "Purge the database"
+run = "docker exec -it categorize-db-1 /bin/bash -c 'psql -U myuser -d mydb -c \"DELETE FROM audios;DELETE FROM bindings;\"'"
+
+[tasks.get_audio]
+description = "Get audio"
+run = "docker exec -it categorize-db-1 /bin/bash -c 'psql -U myuser -d mydb -A -c \"SELECT * FROM audios LIMIT 1;\"'"
