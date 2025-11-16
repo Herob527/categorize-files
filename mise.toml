@@ -5,3 +5,7 @@ run = "docker exec -it categorize-db-1 /bin/bash -c 'psql -U myuser -d mydb -c \
 [tasks.get_audio]
 description = "Get audio"
 run = "docker exec -it categorize-db-1 /bin/bash -c 'psql -U myuser -d mydb  --csv -c \"SELECT * FROM audios LIMIT 1;\"'"
+
+[tasks.venv_run]
+description = "Run command via poetry venv"
+run = " poetry -P ./fastapi-categorise-backend run $args"
