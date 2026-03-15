@@ -37,8 +37,15 @@ services:
       - MINIO_SECRET_KEY=${MINIO_ROOT_PASSWORD}
       - MINIO_SECURE=false
       - MINIO_BUCKET_NAME=${MINIO_BUCKET_NAME:-categorize-files}
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:80/health')"]
+      interval: 15s
+      timeout: 5s
+      retries: 5
+      start_period: 20s
     depends_on:
-      - db
+      db:
+        condition: service_healthy
     env_file:
       - .env
   frontend:
@@ -62,9 +69,17 @@ services:
     networks:
       - app
       - nginx
+    healthcheck:
+      test: ["CMD", "bun", "--eval", "const r = await fetch('http://localhost:5173'); if (!r.ok) process.exit(1)"]
+      interval: 15s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
     depends_on:
-      - backend
-      - minio
+      backend:
+        condition: service_healthy
+      minio:
+        condition: service_healthy
 
 networks:
   postgres:

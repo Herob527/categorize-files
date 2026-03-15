@@ -14,8 +14,10 @@ services:
           path: ../nginx.conf
           target: /etc/nginx/nginx.conf
     depends_on:
-      - backend
-      - frontend
+      backend:
+        condition: service_healthy
+      frontend:
+        condition: service_healthy
 
   nginx-minio:
     build:
