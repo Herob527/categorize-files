@@ -2,7 +2,7 @@ FROM oven/bun:1.2.20-slim AS web-base
 
 COPY ./vue-categorise-frontend .
 
-RUN bun install --frozen-lockfile
+RUN --mount=type=cache,target=/root/.bun/install/cache bun install --frozen-lockfile
 
 RUN bun run build
 
