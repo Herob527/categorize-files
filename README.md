@@ -70,3 +70,57 @@ GF_SECURITY_ADMIN_PASSWORD=admin
 ## Instructions for production
 
 Not planned yet
+
+## Current scope
+
+### Dashboard
+
+- [x] Categorization progress (categorized / uncategorized lines)
+- [x] Transcript progress (filled / empty)
+- [x] Category data (count and category with most assigned bindings)
+- [x] Audio data (total duration)
+
+### Initialization panel
+
+- [x] Upload files
+- [x] Assign categories on upload
+- [x] Delete files
+
+### Transcript panel
+
+- [x] Play audio
+- [x] Assign category
+- [x] Add transcript
+- [-] Paginate (broken after latest backend change)
+- [-] Display (broken after latest backend change)
+
+#### Transcript options
+
+- [x] Add category
+- [x] Delete category
+
+### Finalise panel
+
+- [-] Configure finalization (not everything works yet)
+- [x] Preview before and after finalization
+- [x] Schedule finalization
+- [x] Download archive with files from finalization
+- [x] Remove archive
+
+## The nearest future
+
+- [ ] Adjust transcript panel to the latest changes to backend pagination
+- [ ] Review the way archive is generated
+- [ ] Switch to one background task when uploading file instead of running new one (which scales horribly)
+- [ ] Switch to one background task for finalization instead of running new one
+- [ ] Refactor the way queries in backend and request in frontend are handled
+- [ ] Bug fixes
+
+## Later future
+
+- [ ] Migrate from MinIO
+- [ ] Add dedicated configuration panel
+- [ ] Add offline option (IndexedDB?) for demo
+- [ ] Add deployment example
+- [ ] Add handling multiple projects
+- [ ] Add authentication
