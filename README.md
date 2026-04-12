@@ -116,7 +116,7 @@ but it's not recommended as is to host in public environment.
 
 - [ ] Adjust transcript panel to the latest changes to backend pagination
 - [ ] Review the way archive is generated
-- [ ] Switch to one background task when uploading file instead of running new one (which scales horribly)
+- [ ] Switch to one background task when uploading file instead of running new one each time (which scales horribly)
 - [ ] Switch to one background task for finalization instead of running new one
 - [ ] Refactor the way queries in backend and request in frontend are handled
 - [ ] Bug fixes
