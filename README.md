@@ -14,7 +14,7 @@ Above +
 
 ## Instructions for development
 
-0. Run `git clone 'https://github.com/Herob527/categorize_files  --recursive'`
+0. Run `git clone https://github.com/Herob527/categorize_files  --recursive`
 
 1. Create .env file with environment variables in `.env file` section
 
