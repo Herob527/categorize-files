@@ -1,5 +1,7 @@
 # Categorize files
 
+Tool for uploading audio files, assigning categories, adding transcripts, and exporting processed data.
+
 ## Prerequisites to launch
 
 - Docker
@@ -69,7 +71,10 @@ GF_SECURITY_ADMIN_PASSWORD=admin
 
 ## Instructions for production
 
-Not planned yet
+Not ready yet.
+
+Technically you can just use docker compose and use it,
+but it's not recommended as is to host in public environment.
 
 ## Current scope
 
