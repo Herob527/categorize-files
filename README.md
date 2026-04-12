@@ -119,6 +119,7 @@ but it's not recommended as is to host in public environment.
 - [ ] Switch to one background task when uploading file instead of running new one each time (which scales horribly)
 - [ ] Switch to one background task for finalization instead of running new one
 - [ ] Refactor the way queries in backend and request in frontend are handled
+- [ ] Review the way files are handled
 - [ ] Bug fixes
 
 ## Later future
