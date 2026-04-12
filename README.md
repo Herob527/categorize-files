@@ -96,8 +96,8 @@ but it's not recommended as is to host in public environment.
 - [x] Play audio
 - [x] Assign category
 - [x] Add transcript
-- [-] Paginate (broken after latest backend change)
-- [-] Display (broken after latest backend change)
+- [/] Paginate (broken after latest backend change)
+- [/] Display (broken after latest backend change)
 
 #### Transcript options
 
@@ -106,7 +106,7 @@ but it's not recommended as is to host in public environment.
 
 ### Finalise panel
 
-- [-] Configure finalization (not everything works yet)
+- [/] Configure finalization (not everything works yet)
 - [x] Preview before and after finalization
 - [x] Schedule finalization
 - [x] Download archive with files from finalization
