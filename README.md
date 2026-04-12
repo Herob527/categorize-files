@@ -121,6 +121,7 @@ but it's not recommended as is to host in public environment.
 - [ ] Refactor the way queries in backend and request in frontend are handled
 - [ ] Review the way files are handled in app
 - [ ] Bug fixes
+- [ ] Explore Server Sent Events for handling finalisation
 
 ## Later future
 
@@ -130,3 +131,4 @@ but it's not recommended as is to host in public environment.
 - [ ] Add deployment example
 - [ ] Add handling multiple projects
 - [ ] Add authentication
+- [ ] Add handling multiple people
