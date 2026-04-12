@@ -131,4 +131,4 @@ but it's not recommended as is to host in public environment.
 - [ ] Add deployment example
 - [ ] Add handling multiple projects
 - [ ] Add authentication
-- [ ] Add handling multiple people
+- [ ] Add handling multiple people (collaboration)
