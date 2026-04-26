@@ -156,3 +156,5 @@ To figure out:
 - How backend could report capability of having given actions, filter or source
 
 Come to think of it, there will be likely implementation in TS with fake data to preview and real data from backend
+
+Main goal is to reduce hardcoding processing steps
