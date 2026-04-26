@@ -133,3 +133,26 @@ but it's not recommended as is to host in public environment.
 - [ ] Add authentication
 - [ ] Add handling multiple people (collaboration)
 - [ ] Make finalization to be more customizable (nodes maybe?)
+
+## Nodes-based finalization
+
+Now there is form with data, preview and processes
+
+What if instead use nodes-based editor like in ComfyUI?
+Processes will be there
+
+Nodes:
+
+- Sources — Audio data, text data, category data
+
+- Filters — These will determine what data will go through (according to category for example or audio length)
+
+- Actions — Audio conversion, auto-transcript (will have input and output)
+
+To figure out:
+
+- How to make it, so user will be able to create workflow, where they have everything in one directory or in many in output
+- How filtering will be defined, so user may be able to use multiple criteria and combine if necessary
+- How backend could report capability of having given actions, filter or source
+
+Come to think of it, there will be likely implementation in TS with fake data to preview and real data from backend
