@@ -106,7 +106,7 @@ but it's not recommended as is to host in public environment.
 
 ### Finalise panel
 
-- [x] Configure finalization
+- [ ] Configure finalization
 - [x] Preview before and after finalization
 - [x] Schedule finalization
 - [x] Download archive with files from finalization
