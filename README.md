@@ -116,7 +116,7 @@ but it's not recommended as is to host in public environment.
 
 - [x] Adjust transcript panel to the latest changes to backend pagination
 - [x] Review the way archive is generated -> switched to temp file instead of BinaryIO which makes archive in RAM instead in file system
-- [ ] Make it possible to include more than one archive in finalisation (or just select all)
+- [x] Make it possible to include more than one archive in finalisation or just select all
 - [ ] Switch to one background task when uploading file instead of running new one each time (which scales horribly)
 - [ ] Switch to one background task for finalization instead of running new one
 - [ ] Refactor the way queries in backend and request in frontend are handled
