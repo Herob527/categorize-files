@@ -96,8 +96,8 @@ but it's not recommended as is to host in public environment.
 - [x] Play audio
 - [x] Assign category
 - [x] Add transcript
-- [ ] Paginate (broken after latest backend change)
-- [ ] Display (broken after latest backend change)
+- [x] Paginate
+- [x] Display
 
 #### Transcript options
 
@@ -114,7 +114,7 @@ but it's not recommended as is to host in public environment.
 
 ## The nearest future
 
-- [ ] Adjust transcript panel to the latest changes to backend pagination
+- [x] Adjust transcript panel to the latest changes to backend pagination
 - [ ] Review the way archive is generated
 - [ ] Switch to one background task when uploading file instead of running new one each time (which scales horribly)
 - [ ] Switch to one background task for finalization instead of running new one
@@ -132,3 +132,4 @@ but it's not recommended as is to host in public environment.
 - [ ] Add handling multiple projects
 - [ ] Add authentication
 - [ ] Add handling multiple people (collaboration)
+- [ ] Make finalization to be more customizable (nodes maybe?)
