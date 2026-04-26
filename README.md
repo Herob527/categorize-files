@@ -153,7 +153,7 @@ To figure out:
 
 - How to make it, so user will be able to create workflow, where they have everything in one directory or in many in output
 - How filtering will be defined, so user may be able to use multiple criteria and combine if necessary
-- How backend could report capability of having given actions, filter or source
+- How backend could report capability of having given actions, filter or source etc.
 
 Come to think of it, there will be likely implementation in TS with fake data to preview and real data from backend
 
