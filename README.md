@@ -124,6 +124,8 @@ but it's not recommended as is to host in public environment.
 - [ ] Bug fixes
 - [ ] Explore Server Sent Events for handling finalisation
 - [ ] Handle duplicates of audios
+- [ ] Reconsider UI
+- [ ] Fixup case, when pagination isn't properly reflecting amount of data to send
 
 ## Later future
 
