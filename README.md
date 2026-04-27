@@ -123,6 +123,7 @@ but it's not recommended as is to host in public environment.
 - [ ] Review the way files are handled in app
 - [ ] Bug fixes
 - [ ] Explore Server Sent Events for handling finalisation
+- [ ] Handle duplicates of audios
 
 ## Later future
 
