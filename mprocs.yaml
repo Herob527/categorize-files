@@ -1,3 +1,9 @@
 procs:
   docker:
     shell: "docker compose down && docker compose up --build --watch"
+  nvim:
+    shell: "nvim"
+  in_db:
+    cwd: src
+    shell: docker exec -it db /bin/bash -c "psql -U postgres -d ${DB_NAME}"
+    autostart: false
