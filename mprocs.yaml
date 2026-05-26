@@ -5,5 +5,5 @@ procs:
     shell: "nvim"
   in_db:
     cwd: src
-    shell: docker exec -it db /bin/bash -c "psql -U postgres -d ${DB_NAME}"
+    shell: docker exec -it categorize-db /bin/bash -c "psql -U myuser -d mydb"
     autostart: false
