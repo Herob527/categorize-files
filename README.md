@@ -129,7 +129,7 @@ but it's not recommended as is to host in public environment.
 
 ## Later future
 
-- [ ] Reconsider UI so it'll be easier to understand and easier to do stuff like remove and add with appropiate feedback
+- [ ] Reconsider UI, so it'll be easier to understand and easier to do stuff like remove and add with appropriate feedback
 - [ ] Handle internationalization
 - [ ] Migrate from MinIO to another S3 compatible service
 - [ ] Add dedicated configuration panel
