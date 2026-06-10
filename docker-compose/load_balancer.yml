@@ -30,7 +30,7 @@ services:
         max_attempts: 5
         window: 60s
     ports:
-      - 9010:80
+      - 9010:9010
     networks:
       - nginx
       - storage
