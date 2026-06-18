@@ -1,6 +1,6 @@
 services:
   minio:
-    image: minio/minio:RELEASE.2025-07-23T15-54-02Z
+    image: quay.io/minio/aistor/minio:latest
     container_name: categorize-minio
     restart: always
     ports:
@@ -8,6 +8,7 @@ services:
       - "9001:9001"
     volumes:
       - minio_data:/data
+      - ../minio.license:/minio.license:ro
     command: server /data --console-address ":9001"
     networks:
       - storage
