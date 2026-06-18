@@ -117,7 +117,6 @@ but it's not recommended as is to host in public environment.
 - [x] Adjust transcript panel to the latest changes to backend pagination
 - [x] Review the way archive is generated -> switched to temp file instead of BinaryIO so from now on archive won't be saved in RAM entirely
 - [x] Make it possible to include more than one archive in finalisation or just select all
-- [ ] Switch to presign url instead of uploading via backend
 - [ ] Switch to one background task for finalization instead of running new one
 - [ ] Refactor the way queries in backend and request in frontend are handled
 - [ ] Review the way files are handled in app
@@ -139,6 +138,7 @@ but it's not recommended as is to host in public environment.
 - [ ] Add authentication
 - [ ] Add handling multiple people (collaboration)
 - [ ] Make finalization to be more customizable (nodes maybe?)
+- [ ] Switch to presign url instead of uploading via backend (now it's not worth the effort since events aren't kicking in)
 
 ## Nodes-based finalization
 
