@@ -8,6 +8,7 @@ run = "docker exec -it categorize-db-1 /bin/bash -c 'psql -U myuser -d mydb  --c
 
 [tasks.venv_run]
 description = "Run command via poetry venv"
+dir = "./fastapi-categorise-backend"
 run = "uv run --project ./fastapi-categorise-backend"
 
 [tools]
