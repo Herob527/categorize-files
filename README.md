@@ -118,7 +118,7 @@ but it's not recommended as is to host in public environment.
 - [x] Review the way archive is generated -> switched to temp file instead of BinaryIO so from now on archive won't be saved in RAM entirely
 - [x] Make it possible to include more than one archive in finalisation or just select all
 - [ ] Switch to one background task for finalization instead of running new one
-- [ ] Refactor the way queries in backend and request in frontend are handled
+- [x] Refactor the way queries in backend and request in frontend are handled
 - [ ] Review the way files are handled in app
 - [ ] Bug fixes
 - [ ] Explore Server Sent Events for handling updating finalisation statuses
