@@ -1,88 +1,107 @@
+---
 include:
-  - ./docker-compose/database.yml
-  - ./docker-compose/storage.yml
-  - ./docker-compose/monitoring.yml
-  - ./docker-compose/load_balancer.yml
-
+  - './docker-compose/database.yml'
+  - './docker-compose/storage.yml'
+  - './docker-compose/monitoring.yml'
+  - './docker-compose/load_balancer.yml'
 services:
   backend:
-    restart: always
-    container_name: categorize-backend
+    restart: 'always'
+    container_name: 'categorize-backend'
     build:
-      context: ./fastapi-categorise-backend
+      context: './fastapi-categorise-backend'
     develop:
       watch:
-        - action: sync
-          path: ./fastapi-categorise-backend
-          target: /app
-        - action: rebuild
-          path: pyproject.toml
-        - action: rebuild
-          path: poetry.lock
+        - action: 'sync'
+          path: './fastapi-categorise-backend'
+          target: '/app'
+        - action: 'rebuild'
+          path: 'pyproject.toml'
+        - action: 'rebuild'
+          path: 'poetry.lock'
     networks:
-      - app
-      - postgres
-      - storage
-      - nginx
+      - 'app'
+      - 'postgres'
+      - 'storage'
+      - 'nginx'
     deploy:
       resources:
         limits:
           cpus: 2
-          memory: 2G
-
+          memory: '2G'
     environment:
-      - SQLALCHEMY_DATABASE_URL=postgresql+psycopg://${DB_USER}:${DB_PASSWORD}@db/${DB_NAME}
-      - MINIO_ENDPOINT=${MINIO_ENDPOINT:-minio:9000}
-      - MINIO_ACCESS_KEY=${MINIO_ROOT_USER}
-      - MINIO_SECRET_KEY=${MINIO_ROOT_PASSWORD}
-      - MINIO_SECURE=false
-      - MINIO_BUCKET_NAME=${MINIO_BUCKET_NAME:-categorize-files}
+      - 'SQLALCHEMY_DATABASE_URL=postgresql+psycopg://${DB_USER}:${DB_PASSWORD}@db/${DB_NAME}'
+      - 'MINIO_ENDPOINT=${MINIO_ENDPOINT:-minio:9000}'
+      - 'MINIO_ACCESS_KEY=${MINIO_ROOT_USER}'
+      - 'MINIO_SECRET_KEY=${MINIO_ROOT_PASSWORD}'
+      - 'MINIO_SECURE=false'
+      - 'MINIO_BUCKET_NAME=${MINIO_BUCKET_NAME:-categorize-files}'
     healthcheck:
-      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:80/health')"]
-      interval: 15s
-      timeout: 5s
+      test:
+        - 'CMD'
+        - 'python'
+        - '-c'
+        - 'import urllib.request; urllib.request.urlopen(''http://localhost:80/health'')'
+      interval: '15s'
+      timeout: '5s'
       retries: 5
-      start_period: 20s
+      start_period: '20s'
     depends_on:
       db:
-        condition: service_healthy
+        condition: 'service_healthy'
     env_file:
-      - .env
+      - '.env'
   frontend:
-    container_name: categorize-frontend
-    restart: always
+    container_name: 'categorize-frontend'
+    restart: 'always'
     build:
-      context: ./vue-categorise-frontend
-      target: dev
+      context: './vue-categorise-frontend'
+      target: 'dev'
     environment:
-      - NODE_ENV=development
-      - DOCKER=true
+      - 'NODE_ENV=development'
+      - 'DOCKER=true'
     develop:
       watch:
-        - action: sync
-          path: ./vue-categorise-frontend
-          target: /app
+        - action: 'sync'
+          path: './vue-categorise-frontend'
+          target: '/app'
           ignore:
-            - node_modules/
-        - action: rebuild
-          path: package.json
+            - 'node_modules/'
+        - action: 'rebuild'
+          path: 'package.json'
     networks:
-      - app
-      - nginx
+      - 'app'
+      - 'nginx'
     healthcheck:
-      test: ["CMD", "bun", "--eval", "const r = await fetch('http://localhost:5173'); if (!r.ok) process.exit(1)"]
-      interval: 15s
-      timeout: 5s
+      test:
+        - 'CMD'
+        - 'bun'
+        - '--eval'
+        - 'const r = await fetch(''http://localhost:5173''); if (!r.ok) process.exit(1)'
+      interval: '15s'
+      timeout: '5s'
       retries: 5
-      start_period: 30s
+      start_period: '30s'
     depends_on:
       backend:
-        condition: service_healthy
+        condition: 'service_healthy'
       minio:
-        condition: service_healthy
-
+        condition: 'service_healthy'
+  redis:
+    image: 'redis:latest'
+    container_name: 'my-redis'
+    ports:
+      - '6379:6379'
+    volumes:
+      - 'redis-data:/data'
+    environment:
+      - 'REDIS_ARGS=--requirepass your_password_here --appendonly yes'
+    restart: 'unless-stopped'
+volumes:
+  redis-data:
+    driver: 'local'
 networks:
   postgres:
   storage:
-  app:
-  nginx:
+  app: 
+  nginx: 
