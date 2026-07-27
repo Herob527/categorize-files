@@ -121,7 +121,7 @@ but it's not recommended as is to host in public environment.
 - [x] Refactor the way queries in backend and request in frontend are handled
 - [ ] Review the way files are handled in app
 - [ ] Bug fixes
-- [ ] Explore Server Sent Events for handling updating finalisation statuses
+- [x] Explore Server Sent Events for handling updating finalisation statuses
 - [ ] Handle duplicates of audios (now it'll complain about duplicates)
 - [ ] Fixup case, when pagination isn't properly reflecting amount of data to send
 - [ ] Add removal of status
