@@ -120,7 +120,6 @@ but it's not recommended as is to host in public environment.
 - [x] Refactor the way queries in backend and request in frontend are handled
 - [ ] Bug fixes
 - [x] Explore Server Sent Events for handling updating finalisation statuses
-- [ ] Handle duplicates of audios (now it'll complain about duplicates)
 - [ ] Fixup case, when pagination isn't properly reflecting amount of data to send
 
 ## Later future
@@ -136,6 +135,7 @@ but it's not recommended as is to host in public environment.
 - [ ] Add handling multiple people (collaboration)
 - [ ] Make finalization to be more customizable (nodes maybe?)
 - [ ] Switch to presign url instead of uploading via backend (now it's not worth the effort since events aren't kicking in)
+- [ ] Consider handling duplicates audios (either accept them or deny as of current)
 
 ## Nodes-based finalization
 
