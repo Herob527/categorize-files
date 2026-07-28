@@ -54,6 +54,8 @@ For environment to set up properly, you need to create a `.env` file containing:
 - DB_NAME
 - MINIO_ROOT_USER
 - MINIO_ROOT_PASSWORD
+- REDIS_HOST
+- REDIS_PORT
 - GF_SECURITY_ADMIN_USER (dev only)
 - GF_SECURITY_ADMIN_PASSWORD (dev only)
 
@@ -65,6 +67,8 @@ DB_PASSWORD=mypassword
 DB_NAME=mydb
 MINIO_ROOT_USER=minio
 MINIO_ROOT_PASSWORD=minio_123$
+REDIS_HOST=redis
+REDIS_PORT=6379
 GF_SECURITY_ADMIN_USER=admin
 GF_SECURITY_ADMIN_PASSWORD=admin
 ```
