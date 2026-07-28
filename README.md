@@ -118,12 +118,15 @@ but it's not recommended as is to host in public environment.
 - [x] Review the way archive is generated -> switched to temp file instead of BinaryIO so from now on archive won't be saved in RAM entirely
 - [x] Make it possible to include more than one archive in finalisation or just select all
 - [x] Refactor the way queries in backend and request in frontend are handled
-- [ ] Bug fixes
 - [x] Explore Server Sent Events for handling updating finalisation statuses
 - [x] Fixup case, when pagination isn't properly reflecting amount of data to send
 - [x] Fixup case, when removing category used in export categories
       potentially it'd be better to mark as removed instead of hard removal
 - [x] Fixup case, when passing category to create binding caused foreign key violations since
+
+## Continuous
+
+- [ ] Bug fixes
 
 ## Later future
 
