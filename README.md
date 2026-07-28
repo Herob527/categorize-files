@@ -121,10 +121,9 @@ but it's not recommended as is to host in public environment.
 - [ ] Bug fixes
 - [x] Explore Server Sent Events for handling updating finalisation statuses
 - [ ] Fixup case, when pagination isn't properly reflecting amount of data to send
-- [ ] Fixup case, when removing category used in export categories
+- [x] Fixup case, when removing category used in export categories
       potentially it'd be better to mark as removed instead of hard removal
-- [ ] Fixup case, when passing category to create binding caused foreign key violations since
-      potentially it'd be better to first create categories and then create binding
+- [x] Fixup case, when passing category to create binding caused foreign key violations since
 
 ## Later future
 
