@@ -120,7 +120,7 @@ but it's not recommended as is to host in public environment.
 - [x] Refactor the way queries in backend and request in frontend are handled
 - [ ] Bug fixes
 - [x] Explore Server Sent Events for handling updating finalisation statuses
-- [ ] Fixup case, when pagination isn't properly reflecting amount of data to send
+- [x] Fixup case, when pagination isn't properly reflecting amount of data to send
 - [x] Fixup case, when removing category used in export categories
       potentially it'd be better to mark as removed instead of hard removal
 - [x] Fixup case, when passing category to create binding caused foreign key violations since
