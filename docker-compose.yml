@@ -95,7 +95,7 @@ services:
     volumes:
       - 'redis-data:/data'
     environment:
-      - 'REDIS_ARGS=--requirepass your_password_here --appendonly yes'
+      - 'REDIS_ARGS=--requirepass ${REDIS_PASSWORD} --appendonly yes'
     restart: 'unless-stopped'
     networks:
       - 'app'
