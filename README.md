@@ -132,7 +132,7 @@ but it's not recommended as is to host in public environment.
 
 - [ ] Bug fixes
 
-## Later future
+## Later future (ideas)
 
 - [ ] Reconsider UI, so it'll be easier to understand and easier to do stuff like remove and add with appropriate feedback
 - [ ] Handle internationalization
