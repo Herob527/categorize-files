@@ -12,7 +12,7 @@ Tool for uploading audio files, assigning categories, adding transcripts, and ex
 Above +
 
 - bun (for vue)
-- python with Poetry (for fastapi)
+- python with uv (for fastapi)
 
 ## Instructions for development
 
