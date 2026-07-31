@@ -136,6 +136,7 @@ but it's not recommended as is to host in public environment.
 
 ## Later future (ideas)
 
+- [ ] Explore the way to remove sync SQLAlchemy engine since now it's just for creating tables on startup
 - [ ] Reconsider UI, so it'll be easier to understand and easier to do stuff like remove and add with appropriate feedback
 - [ ] Handle internationalization
 - [ ] Migrate from MinIO to another S3 compatible service
