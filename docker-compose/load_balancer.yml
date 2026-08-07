@@ -1,7 +1,7 @@
 services:
   nginx:
     build:
-      context: ../
+      context: .
       target: base
     ports:
       - 3050:3050
@@ -11,7 +11,7 @@ services:
     develop:
       watch:
         - action: sync+restart
-          path: ../nginx.conf
+          path: nginx.conf
           target: /etc/nginx/nginx.conf
     depends_on:
       backend:
@@ -21,7 +21,7 @@ services:
 
   nginx-minio:
     build:
-      context: ../
+      context: .
       target: base-minio
     deploy:
       restart_policy:
@@ -37,7 +37,7 @@ services:
     develop:
       watch:
         - action: sync+restart
-          path: ../nginx-minio.conf
+          path: nginx-minio.conf
           target: /etc/nginx/nginx.conf
     depends_on:
       - minio
